@@ -15,10 +15,10 @@ const impactEstimator = (data) => {
   );
   // CHALLENGE-3
   impact.casesForICUByRequestedTime = Math.trunc(
-    impact.infectionsByRequestedTime * 0.05
+    impact.infectionsByRequestedTime * 5
   );
   impact.casesForVentilatorsByRequestedTime = Math.trunc(
-    impact.infectionsByRequestedTime * 0.02
+    impact.infectionsByRequestedTime * 2
   );
   impact.dollarsInFlight = parseFloat(
     (impact.infectionsByRequestedTime

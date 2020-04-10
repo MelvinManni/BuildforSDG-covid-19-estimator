@@ -4,7 +4,7 @@ const severeImpactEstimator = (data) => {
   const severeImpact = {};
 
   // CHALLENGE-1
-  severeImpact.currentlyInfected = data.reportedCases * 10;
+  severeImpact.currentlyInfected = data.reportedCases * 50;
   severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected
   * estimateNumberOfInfected;
   // CHALLENGE-2

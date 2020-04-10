@@ -16,10 +16,10 @@ const severeImpactEstimator = (data) => {
   );
   // CHALLENGE-3
   severeImpact.casesForICUByRequestedTime = Math.trunc(
-    severeImpact.infectionsByRequestedTime * 0.05
+    0.05 * severeImpact.infectionsByRequestedTime
   );
   severeImpact.casesForVentilatorsByRequestedTime = Math.trunc(
-    severeImpact.infectionsByRequestedTime * 0.02
+    0.02 * severeImpact.infectionsByRequestedTime
   );
   severeImpact.dollarsInFlight = parseFloat(
     (severeImpact.infectionsByRequestedTime

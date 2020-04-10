@@ -24,7 +24,7 @@ const impactEstimator = (data) => {
     (impact.infectionsByRequestedTime
     * data.region.avgDailyIncomeInUSD
     * data.region.avgDailyIncomePopulation
-    * timeToElapse(data)).toFixed(2)
+    * timeToElapse(data.periodType, data.timeToElapse)).toFixed(2)
   );
 
   return impact;

@@ -1,12 +1,12 @@
-export const timeToElapse = (data) => {
+export const timeToElapse = (periodType, time) => {
   let period;
 
-  if (data.periodType === 'days') {
-    period = data.timeToElapse;
-  } else if (data.periodType === 'weeks') {
-    period = data.timeToElapse * 7;
+  if (periodType === 'days') {
+    period = time;
+  } else if (periodType === 'weeks') {
+    period = time * 7;
   } else {
-    period = data.timeToElapse * 30;
+    period = time * 30;
   }
 
   return period;

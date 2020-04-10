@@ -6,7 +6,7 @@ const severeImpactEstimator = (data) => {
   // CHALLENGE-1
   severeImpact.currentlyInfected = data.reportedCases * 50;
   severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected
-  * estimateNumberOfInfected;
+  * estimateNumberOfInfected(data);
   // CHALLENGE-2
   severeImpact.severeCasesByRequestedTime = Math.trunc(
     severeImpact.infectionsByRequestedTime * 0.15
@@ -25,7 +25,7 @@ const severeImpactEstimator = (data) => {
     severeImpact.infectionsByRequestedTime
       * data.region.avgDailyIncomeInUSD
       * data.region.avgDailyIncomePopulation
-      * timeToElapse
+      * timeToElapse(data)
   ).toFixed(2);
 
   return severeImpact;

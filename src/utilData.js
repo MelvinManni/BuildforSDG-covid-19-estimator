@@ -23,5 +23,7 @@ export const estimateNumberOfInfected = (data) => {
     factor = Math.trunc((data.timeToElapse * 30) / 3);
   }
 
-  return 2 ** factor;
+  factor = 2 ** factor;
+
+  return factor;
 };

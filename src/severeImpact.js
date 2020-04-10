@@ -21,10 +21,12 @@ const severeImpactEstimator = (data) => {
   severeImpact.casesForVentilatorsByRequestedTime = Math.trunc(
     severeImpact.infectionsByRequestedTime * 0.2
   );
-  severeImpact.dollarsInFlight = (severeImpact.infectionsByRequestedTime
-      * data.region.avgDailyIncomeInUSD
-      * data.region.avgDailyIncomePopulation
-      * timeToElapse(data)).toFixed(2);
+  severeImpact.dollarsInFlight = parseFloat(
+    (severeImpact.infectionsByRequestedTime
+    * data.region.avgDailyIncomeInUSD
+    * data.region.avgDailyIncomePopulation
+    * timeToElapse(data)).toFixed(2)
+  );
 
   return severeImpact;
 };

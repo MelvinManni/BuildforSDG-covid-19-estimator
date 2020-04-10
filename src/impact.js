@@ -20,10 +20,12 @@ const impactEstimator = (data) => {
   impact.casesForVentilatorsByRequestedTime = Math.trunc(
     impact.infectionsByRequestedTime * 0.2
   );
-  impact.dollarsInFlight = (impact.infectionsByRequestedTime
-      * data.region.avgDailyIncomeInUSD
-      * data.region.avgDailyIncomePopulation
-      * timeToElapse(data)).toFixed(2);
+  impact.dollarsInFlight = parseFloat(
+    (impact.infectionsByRequestedTime
+    * data.region.avgDailyIncomeInUSD
+    * data.region.avgDailyIncomePopulation
+    * timeToElapse(data)).toFixed(2)
+  );
 
   return impact;
 };

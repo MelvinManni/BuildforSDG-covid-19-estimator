@@ -20,11 +20,11 @@ const impactEstimator = (data) => {
   impact.casesForVentilatorsByRequestedTime = Math.trunc(
     0.02 * impact.infectionsByRequestedTime
   );
-  impact.dollarsInFlight = parseFloat(
+  impact.dollarsInFlight = Math.trunc(
     (impact.infectionsByRequestedTime
     * data.region.avgDailyIncomeInUSD
-    * data.region.avgDailyIncomePopulation
-    * timeToElapse(data.periodType, data.timeToElapse)).toFixed(2)
+    * data.region.avgDailyIncomePopulation)
+    / timeToElapse(data.periodType, data.timeToElapse)
   );
 
   return impact;
